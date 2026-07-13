@@ -2,7 +2,7 @@
 
 A Vintage Story mod that adds a wooden composter container. Food placed inside perishes much faster than normal storage.
 
-This repository is a maintained fork for **Vintage Story 1.22.3** (`net10.0`), based on the original [Composter](https://github.com/Craluminum-Mods/Composter) by [Craluminum2413](https://mods.vintagestory.at/composter) (Unlicense).
+Maintained by **mrparsnips** and **TheSchlomo** for **Vintage Story 1.22.3** (`net10.0`), based on the original [Composter](https://github.com/Craluminum-Mods/Composter) by [Craluminum2413](https://mods.vintagestory.at/composter) (Unlicense).
 
 ## Build
 

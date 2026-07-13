@@ -1,11 +1,14 @@
 {
+    "$schema": "https://moddbcdn.vintagestory.at/schema/modinfo.latest.json",
     "type": "code",
     "side": "universal",
     "modid": "composter",
     "name": "Composter",
-    "description": "A container that decomposes food extremely fast",
-    "authors": ["Craluminum2413", "mrparsnips"],
+    "description": "A container that decomposes food extremely fast. Maintained 1.22.3 fork of Craluminum2413's Composter.",
+    "authors": ["mrparsnips", "TheSchlomo"],
+    "contributors": ["Craluminum2413"],
     "version": "1.2.3",
+    "website": "https://github.com/mrparsnips/Composter",
     "dependencies": {
         "game": "1.22.3"
     }
