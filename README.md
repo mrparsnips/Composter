@@ -14,6 +14,12 @@ dotnet build -c Release
 
 Output: `bin/Release/Mods/mod/`
 
+## Install (release)
+
+1. Download **`composter_1.2.3.zip`** from [GitHub Releases](https://github.com/mrparsnips/Composter/releases).
+2. Copy the zip into your Vintage Story **`Mods`** folder (do not unzip).
+3. Launch the game — requires **Vintage Story 1.22.3**.
+
 ## Verify (VSMods harness)
 
 From the parent [VSMods](https://github.com/mrparsnips/VSMods) workspace:
