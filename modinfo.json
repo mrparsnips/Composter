@@ -1,0 +1,12 @@
+{
+    "type": "code",
+    "side": "universal",
+    "modid": "composter",
+    "name": "Composter",
+    "description": "A container that decomposes food extremely fast",
+    "authors": ["Craluminum2413", "mrparsnips"],
+    "version": "1.2.3",
+    "dependencies": {
+        "game": "1.22.3"
+    }
+}
