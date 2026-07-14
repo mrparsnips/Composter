@@ -7,7 +7,7 @@
     "description": "A container that decomposes food extremely fast. Maintained 1.22.3 repack/fork of Craluminum2413's Composter.",
     "authors": ["mrparsnips", "TheSchlomo"],
     "contributors": ["Craluminum2413"],
-    "version": "0.2.0",
+    "version": "0.2.1",
     "website": "https://github.com/mrparsnips/Composter",
     "dependencies": {
         "game": "1.22.3"

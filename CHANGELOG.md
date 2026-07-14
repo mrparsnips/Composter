@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.1 — 2026-07-13
+
+- Apply compost perish multiplier via `TransitionableSpeedMulByType` (vanilla path) so spoilage and the "Stored food perish speed" tooltip both reflect config (default **500×** climate/room rate, e.g. ~165× outdoors)
+- Sync `perishRate` to clients; fix cases where the old inventory hook never attached because `InitInventory` ran before `Api` was set
+
+### Install
+
+Download `composterrepack_0.2.1.zip`. Remove older `composterrepack_*.zip` first.
+
 ## 0.2.0 — 2026-07-13
 
 - Fix release packaging: zip entries now use POSIX `/` paths so Linux dedicated servers unpack `assets/` correctly (1.2.3 used Windows `\` paths; DLL loaded but blocks never registered)
