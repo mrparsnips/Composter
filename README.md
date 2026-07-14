@@ -16,7 +16,7 @@ Output: `bin/Release/Mods/mod/`
 
 ## Install (release)
 
-1. Download **`composterrepack_1.2.3.zip`** from [GitHub Releases](https://github.com/mrparsnips/Composter/releases).
+1. Download **`composterrepack_0.2.0.zip`** from [GitHub Releases](https://github.com/mrparsnips/Composter/releases) or [Mod DB](https://mods.vintagestory.at/compostthis).
 2. Copy the zip into your Vintage Story **`Mods`** folder (do not unzip).
 3. Launch the game — requires **Vintage Story 1.22.3**.
 
