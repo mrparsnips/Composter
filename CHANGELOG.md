@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0 — 2026-07-16
+
+- Config: `QuantitySlots` (default **16**, clamp 1–64) in `ModConfig/Composter.json` — applies to **newly placed** composters only; existing ones keep their saved inventory size
+- Config: default `PerishRate` is now **100** (was 500); clamp to a minimum of `0.01` and log when values are adjusted
+- Document both settings in the README
+
+### Install
+
+Download `composterrepack_0.3.0.zip`. Remove older `composterrepack_*.zip` first.
+
 ## 0.2.1 — 2026-07-13
 
 - Apply compost perish multiplier via `TransitionableSpeedMulByType` (vanilla path) so spoilage and the "Stored food perish speed" tooltip both reflect config (default **500×** climate/room rate, e.g. ~165× outdoors)

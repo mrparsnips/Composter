@@ -10,7 +10,7 @@ public class BlockEntityComposter : BlockEntityGenericTypedContainer
     /// Multiplier applied on top of the climate/room perish rate.
     /// Synced to clients so the "Stored food perish speed" tooltip is accurate.
     /// </summary>
-    float perishRate = 500f;
+    float perishRate = ConfigComposter.DefaultPerishRate;
 
     public override void Initialize(ICoreAPI api)
     {
@@ -57,7 +57,7 @@ public class BlockEntityComposter : BlockEntityGenericTypedContainer
 
         // Vanilla BEContainer.GetBlockInfo multiplies GetPerishRate() by this value for the tooltip,
         // and InventoryGeneric.GetTransitionSpeedMul applies it before climate delegates — so this
-        // both accelerates spoilage and shows the real combined rate (e.g. 0.33 × 500 ≈ 165×).
+        // both accelerates spoilage and shows the real combined rate (e.g. 0.33 × 100 ≈ 33×).
         inv.TransitionableSpeedMulByType ??= new Dictionary<EnumTransitionType, float>();
         inv.TransitionableSpeedMulByType[EnumTransitionType.Perish] = perishRate;
     }
