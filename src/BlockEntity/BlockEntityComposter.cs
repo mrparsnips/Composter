@@ -48,6 +48,16 @@ public class BlockEntityComposter : BlockEntityGenericTypedContainer
         tree.SetFloat("perishRate", perishRate);
     }
 
+    /// <summary>
+    /// Live-update perish multiplier after ConfigLib / config file changes (server).
+    /// </summary>
+    public void ApplyConfigPerishRate(float rate)
+    {
+        perishRate = rate;
+        ApplyPerishSpeed();
+        MarkDirty(true);
+    }
+
     void ApplyPerishSpeed()
     {
         if (Inventory is not InventoryGeneric inv)

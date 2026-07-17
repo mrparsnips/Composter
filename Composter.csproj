@@ -30,6 +30,11 @@
       <HintPath>$(VINTAGE_STORY)/Lib/Newtonsoft.Json.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <!-- Soft optional: ConfigLib GUI. Do not ship this DLL; do not add to modinfo dependencies. -->
+    <Reference Include="configlib">
+      <HintPath>..\testbeds\pack-122-staging\Cache\unpack\configlib_1.12.0.zip_cfd3a3b1cb5d\configlib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

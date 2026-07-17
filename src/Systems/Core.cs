@@ -5,7 +5,7 @@ global using Vintagestory.GameContent;
 using System;
 using Composter.Configuration;
 using Newtonsoft.Json.Linq;
-using Vintagestory.API.Datastructures;
+using Vintagestory.API.Server;
 
 namespace Composter;
 
@@ -17,13 +17,21 @@ public class Core : ModSystem
 
     public override void StartPre(ICoreAPI api)
     {
-        if (!api.Side.IsServer())
+        if (api.Side.IsServer())
         {
-            return;
+            Config = ModConfig.ReadConfig<ConfigComposter>(api, ConfigLibCompat.ConfigFile);
+            Config?.Clamp(api);
+        }
+        else
+        {
+            // Defaults until ConfigLib syncs from the server (or SP host file).
+            Config = new ConfigComposter(api);
         }
 
-        Config = ModConfig.ReadConfig<ConfigComposter>(api, "Composter.json");
-        Config?.Clamp(api);
+        if (api.ModLoader.IsModEnabled("configlib") && Config != null)
+        {
+            ConfigLibCompat.Register(api, Config, () => OnConfigApplied(api));
+        }
     }
 
     public override void Start(ICoreAPI api)
@@ -44,6 +52,24 @@ public class Core : ModSystem
             return;
         }
 
+        ApplyQuantitySlots(api);
+    }
+
+    void OnConfigApplied(ICoreAPI api)
+    {
+        Config?.Clamp(api);
+
+        if (!api.Side.IsServer() || Config == null)
+        {
+            return;
+        }
+
+        ApplyQuantitySlots(api);
+        RefreshPlacedComposterPerishRates(api);
+    }
+
+    void ApplyQuantitySlots(ICoreAPI api)
+    {
         int slots = Config.QuantitySlots;
         int patched = 0;
 
@@ -80,5 +106,40 @@ public class Core : ModSystem
         api.Logger.Event(
             "[composterrepack] QuantitySlots={0} applied to {1} block variant(s) (new placements only)",
             slots, patched);
+    }
+
+    void RefreshPlacedComposterPerishRates(ICoreAPI api)
+    {
+        if (api is not ICoreServerAPI sapi)
+        {
+            return;
+        }
+
+        int updated = 0;
+        foreach (IWorldChunk chunk in sapi.WorldManager.AllLoadedChunks.Values)
+        {
+            if (chunk?.BlockEntities == null)
+            {
+                continue;
+            }
+
+            foreach (BlockEntity be in chunk.BlockEntities.Values)
+            {
+                if (be is not BlockEntityComposter compost)
+                {
+                    continue;
+                }
+
+                compost.ApplyConfigPerishRate(Config.PerishRate);
+                updated++;
+            }
+        }
+
+        if (updated > 0)
+        {
+            sapi.Logger.Event(
+                "[composterrepack] PerishRate={0} applied to {1} loaded composter(s)",
+                Config.PerishRate, updated);
+        }
     }
 }

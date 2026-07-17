@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.1 — 2026-07-17
+
+- Optional [ConfigLib](https://mods.vintagestory.at/configlib) support: edit `PerishRate` / `QuantitySlots` in the in-game config GUI (same `ModConfig/Composter.json`)
+- Live-apply perish rate to loaded composters when config changes; slot count still affects **new placements** only
+- Soft dependency only — ConfigLib is not required
+- ConfigLib slider range for `PerishRate` is **0.1–1000** (was 0.01–100000)
+
+### Install
+
+Download `composterrepack_0.3.1.zip`. Remove older `composterrepack_*.zip` first.
+
 ## 0.3.0 — 2026-07-16
 
 - Config: `QuantitySlots` (default **16**, clamp 1–64) in `ModConfig/Composter.json` — applies to **newly placed** composters only; existing ones keep their saved inventory size

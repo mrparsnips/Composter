@@ -16,7 +16,7 @@ Output: `bin/Release/Mods/mod/`
 
 ## Install (release)
 
-1. Download **`composterrepack_0.3.0.zip`** from [GitHub Releases](https://github.com/mrparsnips/Composter/releases) or [Mod DB](https://mods.vintagestory.at/compostthis).
+1. Download **`composterrepack_0.3.1.zip`** from [GitHub Releases](https://github.com/mrparsnips/Composter/releases) or [Mod DB](https://mods.vintagestory.at/compostthis).
 2. Copy the zip into your Vintage Story **`Mods`** folder (do not unzip).
 3. Launch the game — requires **Vintage Story 1.22.3**.
 
@@ -30,7 +30,7 @@ From the parent [VSMods](https://github.com/mrparsnips/VSMods) workspace:
 
 ## Configuration
 
-After the first server/world load, edit `ModConfig/Composter.json` (under the world `--dataPath` / dedicated `data` folder), then **restart** the server (or world):
+Edit `ModConfig/Composter.json` (under the world `--dataPath` / dedicated `data` folder), or use **ConfigLib** in-game if that mod is installed:
 
 ```json
 {
@@ -41,12 +41,15 @@ After the first server/world load, edit `ModConfig/Composter.json` (under the wo
 
 | Key | Default | Notes |
 |-----|--------:|-------|
-| `PerishRate` | `100` | Multiplier on the climate/room perish rate (tooltip shows climate × this). Clamped to at least `0.01`. |
+| `PerishRate` | `100` | Multiplier on the climate/room perish rate (tooltip shows climate × this). Clamped to `0.1`–`1000`. Live-updates loaded composters when changed via ConfigLib. |
 | `QuantitySlots` | `16` | Inventory slots for **newly placed** composters only (1–64). Already-placed composters keep their saved size until broken and replaced. |
+
+Without ConfigLib, restart the server/world after editing the JSON file so quantity-slot patches re-apply.
 
 ## Optional compatibility
 
-`assets/composter/patches/carrycapacity.json` adds CarryOn support when the `carryon` mod is installed.
+- **ConfigLib** (optional): in-game GUI for the settings above. Not listed as a hard dependency.
+- `assets/composter/patches/carrycapacity.json` adds CarryOn support when the `carryon` mod is installed.
 
 ## License
 
