@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.2 — 2026-07-21
+
+- Verified on **Vintage Story 1.22.5** (L0–L3 smoke against dedicated server)
+- Docs/metadata updated for 1.22.5; minimum game dependency remains **1.22.3**
+
+### Install
+
+Download `composterrepack_0.3.2.zip`. Remove older `composterrepack_*.zip` first.
+
 ## 0.3.1 — 2026-07-17
 
 - Optional [ConfigLib](https://mods.vintagestory.at/configlib) support: edit `PerishRate` / `QuantitySlots` in the in-game config GUI (same `ModConfig/Composter.json`)

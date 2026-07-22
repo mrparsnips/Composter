@@ -1,12 +1,12 @@
-# Composter (1.22.3)
+# Composter (1.22.3+)
 
 A Vintage Story mod that adds a wooden composter container. Food placed inside perishes much faster than normal storage.
 
-Maintained by **mrparsnips** and **TheSchlomo** for **Vintage Story 1.22.3** (`net10.0`), based on the original [Composter](https://github.com/Craluminum-Mods/Composter) by [Craluminum2413](https://mods.vintagestory.at/composter) (Unlicense).
+Maintained by **mrparsnips** and **TheSchlomo** for **Vintage Story 1.22.3+** (`net10.0`, verified on **1.22.5**), based on the original [Composter](https://github.com/Craluminum-Mods/Composter) by [Craluminum2413](https://mods.vintagestory.at/composter) (Unlicense).
 
 ## Build
 
-Requires `$env:VINTAGE_STORY` pointing at a 1.22.3 install (folder containing `VintagestoryAPI.dll`).
+Requires `$env:VINTAGE_STORY` pointing at a 1.22.3+ install (folder containing `VintagestoryAPI.dll`).
 
 ```powershell
 dotnet build -c Release
@@ -16,9 +16,9 @@ Output: `bin/Release/Mods/mod/`
 
 ## Install (release)
 
-1. Download **`composterrepack_0.3.1.zip`** from [GitHub Releases](https://github.com/mrparsnips/Composter/releases) or [Mod DB](https://mods.vintagestory.at/compostthis).
+1. Download **`composterrepack_0.3.2.zip`** from [GitHub Releases](https://github.com/mrparsnips/Composter/releases) or [Mod DB](https://mods.vintagestory.at/compostthis).
 2. Copy the zip into your Vintage Story **`Mods`** folder (do not unzip).
-3. Launch the game — requires **Vintage Story 1.22.3**.
+3. Launch the game — requires **Vintage Story 1.22.3+** (verified on 1.22.5).
 
 ## Verify (VSMods harness)
 
